@@ -116,7 +116,16 @@ function storeData(location,id){
     li.textContent = listString;
     locationList.appendChild(li);
   }
+  var totalCookies = document.createElement("li");
+  var totalCount = 0;
+  for (liIndex = 0; liIndex < hours.length; liIndex++){
+    totalCount = totalCount + location.hourlyArray[liIndex];
+  }
+  var totalMessage = `Total: ${totalCount} cookies`;
+  totalCookies.textContent = totalMessage;
+  locationList.appendChild(totalCookies);
 }
+
 generate();
 
 storeData(firstAndPike,"pike");
