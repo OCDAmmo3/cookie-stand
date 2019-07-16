@@ -1,113 +1,95 @@
 "use strict";
 
-var firstAndPike = {
-    minCust: 23,
-    maxCust: 65,
-    avgCookies: 6.3,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        firstAndPike.hourlyArray[i] = Math.floor(this.randCust()*firstAndPike.avgCookies);
-      }
-    }
-}
-
-var seaTacAirport = {
-    minCust: 3,
-    maxCust: 24,
-    avgCookies: 1.2,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        seaTacAirport.hourlyArray[i] = Math.floor(this.randCust()*seaTacAirport.avgCookies);
-      }
-    }
-}
-
-
-
-var seattleCenter = {
-    minCust: 11,
-    maxCust: 38,
-    avgCookies: 3.7,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        seattleCenter.hourlyArray[i] = Math.floor(this.randCust()*seattleCenter.avgCookies);
-      }
-    }
-}
-
-
-
-var capitolHill = {
-    minCust: 20,
-    maxCust: 38,
-    avgCookies: 2.3,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        capitolHill.hourlyArray[i] = Math.floor(this.randCust()*capitolHill.avgCookies);
-      }
-    }
-}
-
-
-
-var alki = {
-    minCust: 2,
-    maxCust: 16,
-    avgCookies: 4.6,
-    hourlyArray:[],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        alki.hourlyArray[i] = Math.floor(this.randCust()*alki.avgCookies);
-        //rather than return sales, puts into a for loop to track the days sales.
-      }
-    }
-}
-//
-// console.log(firstAndPike.randCookies());
-// console.log(seaTacAirport.randCookies());
-// console.log(seattleCenter.randCookies());
-// console.log(capitolHill.randCookies());
-// console.log(alki.randCookies());
-
 var hours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm"]
 
-function generate() {
-  firstAndPike.randCust();
-  firstAndPike.randCookies();
-  seaTacAirport.randCust();
-  seaTacAirport.randCookies();
-  seattleCenter.randCust();
-  seattleCenter.randCookies();
-  capitolHill.randCust();
-  capitolHill.randCookies();
-  alki.randCust();
-  alki.randCookies();
+
+function salesTable() {
+  var thead = document.getElementById("thead");
+  var td = document.createElement("td");
+  thead.appendChild(td);
+  for(var i = 0; i < hours.length; i++) {
+    td = document.createElement("td");
+    td.textContent = hours[i];
+    thead.appendChild(td);
+  }
 }
 
+function Restaurant(name,minCust,maxCust,avgCookies,id){
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.hourlyArray = [];
+  this.id = id;
+}
+//Constructor function set up
+Restaurant.prototype.randCust = function() {
+  var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+  return numCust;
+};
+Restaurant.prototype.randCookies = function() {
+  for(var i=0; i<hours.length; i++){
+    this.hourlyArray[i] = Math.floor(this.randCust()*this.avgCookies);
+  }
+};
+Restaurant.prototype.render = function() {
+  this.randCookies();
+  var restaurantTable = document.getElementById(this.id);
+  var td = document.createElement("td");
+  td.textContent = this.name;
+  restaurantTable.appendChild(td);
+  var totalSales = 0;
+  for(var j = 0; j < this.hourlyArray.length; j++) {
+    td = document.createElement("td");
+    td.textContent = this.hourlyArray[j];
+    restaurantTable.appendChild(td);
+    totalSales = totalSales + this.hourlyArray[j];
+  }
+  td = document.createElement("td");
+  td.textContent = totalSales;
+}
+
+function hourlySales(first, second, third, fourth, fifth) {
+  var dailyTotal = 0;
+  var restaurantTotal = document.getElementById("totalOfTable");
+  var td = document.createElement("td");
+  td.textContent = "Overall Hourly Totals";
+  restaurantTotal.appendChild(td);
+  for(var k = 0; k < hours.length; k++) {
+    var total = first.hourlyArray[k] + second.hourlyArray[k] + third.hourlyArray[k] + fourth.hourlyArray[k] + fifth.hourlyArray[k];
+    td = document.createElement("td");
+    td.textContent = total;
+    restaurantTotal.appendChild(td);
+    dailyTotal = dailyTotal + total;
+  }
+  td = document.createElement("td");
+  td.textContent = dailyTotal;
+  restaurantTotal.appendChild(td);
+}
+
+salesTable();
+
+var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3, "pikeTable");
+firstAndPike.render();
+var seaTacAirport = new Restaurant("SeaTac Airport", 3, 24, 1.2, "seaTacTable");
+seaTacAirport.render();
+var seattleCenter = new Restaurant("Seattle Center", 11, 38, 3.7, "seattleTable");
+seattleCenter.render();
+var capitolHill = new Restaurant("Capitol Hill", 20, 38, 2.3, "capitolTable");
+capitolHill.render();
+var alki = new Restaurant ("Alki", 2, 16, 4.6, "alkiTable");
+alki.render();
+
+hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki)
+
+/*
+function generate() {
+  firstAndPike.randCookies();
+  seaTacAirport.randCookies();
+  seattleCenter.randCookies();
+  capitolHill.randCookies();
+  alki.randCookies();
+}
 function storeData(location,id){
   var locationList = document.getElementById(id);
   for(var liIndex = 0; liIndex < location.hourlyArray.length; liIndex++){
@@ -127,9 +109,9 @@ function storeData(location,id){
 }
 
 generate();
-
 storeData(firstAndPike,"pike");
 storeData(seaTacAirport,"seaTac");
 storeData(seattleCenter,"seattle");
 storeData(capitolHill,"capitol");
 storeData(alki,"alki");
+*/
