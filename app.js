@@ -1,127 +1,47 @@
 "use strict";
 
-function Restaurant(minCust,maxCust,avgCookies,hourlyArray){
-  this.minCust = minCust;
-  this.maxCust = maxCust;
-  this.avgCookies = avgCookies;
-  this.hourlyArray = hourlyArray;
-  this.randCust = function() {
-    var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-    return numCust;
-  };
-  this.randCookies = function() {
-    var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-    return numCust;
+function salesTable() {
+  var thead = document.getElementById("thead");
+  var td = document.createElement("td");
+  thead.appendChild(td);
+  for(var i = 0; i < hours.length; i++) {
+    td = document.createElement("td");
+    td.textContent = hours[i];
+    thead.appendChild(td);
   }
 }
 
-var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3, [])
-
-var firstAndPike = {
-    minCust: 23,
-    maxCust: 65,
-    avgCookies: 6.3,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        firstAndPike.hourlyArray[i] = Math.floor(this.randCust()*firstAndPike.avgCookies);
-      }
-    }
+function Restaurant(name,minCust,maxCust,avgCookies){
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.hourlyArray = [];
 }
-
-var seaTacAirport = {
-    minCust: 3,
-    maxCust: 24,
-    avgCookies: 1.2,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        seaTacAirport.hourlyArray[i] = Math.floor(this.randCust()*seaTacAirport.avgCookies);
-      }
+//Constructor function set up
+  Restaurant.prototype.randCust = function() {
+    var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return numCust;
+  };
+  Restaurant.prototype.randCookies = function() {
+    for(var i=0; i<hours.length; i++){
+      this.hourlyArray[i] = Math.floor(this.randCust()*this.avgCookies);
     }
-}
+  }
 
-
-
-var seattleCenter = {
-    minCust: 11,
-    maxCust: 38,
-    avgCookies: 3.7,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        seattleCenter.hourlyArray[i] = Math.floor(this.randCust()*seattleCenter.avgCookies);
-      }
-    }
-}
-
-
-
-var capitolHill = {
-    minCust: 20,
-    maxCust: 38,
-    avgCookies: 2.3,
-    hourlyArray: [],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        capitolHill.hourlyArray[i] = Math.floor(this.randCust()*capitolHill.avgCookies);
-      }
-    }
-}
-
-
-
-var alki = {
-    minCust: 2,
-    maxCust: 16,
-    avgCookies: 4.6,
-    hourlyArray:[],
-    randCust: function() {
-      var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
-      return numCust;
-  },
-    randCookies: function() {
-      for(var i=0; i<hours.length; i++){
-        alki.hourlyArray[i] = Math.floor(this.randCust()*alki.avgCookies);
-        //rather than return sales, puts into a for loop to track the days sales.
-      }
-    }
-}
-//
-// console.log(firstAndPike.randCookies());
-// console.log(seaTacAirport.randCookies());
-// console.log(seattleCenter.randCookies());
-// console.log(capitolHill.randCookies());
-// console.log(alki.randCookies());
+var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3);
+var seaTacAirport = new Restaurant("SeaTac Airport", 3, 24, 1.2);
+var seattleCenter = new Restaurant("Seattle Center", 11, 38, 3.7);
+var capitolHill = new Restaurant("Capitol Hill", 20, 38, 2.3);
+var alki = new Restaurant ("Alki", 2, 16, 4.6);
 
 var hours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm"]
 
 function generate() {
-  firstAndPike.randCust();
   firstAndPike.randCookies();
-  seaTacAirport.randCust();
   seaTacAirport.randCookies();
-  seattleCenter.randCust();
   seattleCenter.randCookies();
-  capitolHill.randCust();
   capitolHill.randCookies();
-  alki.randCust();
   alki.randCookies();
 }
 
@@ -144,7 +64,6 @@ function storeData(location,id){
 }
 
 generate();
-
 storeData(firstAndPike,"pike");
 storeData(seaTacAirport,"seaTac");
 storeData(seattleCenter,"seattle");
