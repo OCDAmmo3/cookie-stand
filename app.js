@@ -38,14 +38,36 @@ Restaurant.prototype.render = function() {
   var td = document.createElement("td");
   td.textContent = this.name;
   restaurantTable.appendChild(td);
+  var totalSales = 0;
   for(var j = 0; j < this.hourlyArray.length; j++) {
     td = document.createElement("td");
     td.textContent = this.hourlyArray[j];
     restaurantTable.appendChild(td);
+    totalSales = totalSales + this.hourlyArray[j];
   }
+  td = document.createElement("td");
+  td.textContent = totalSales;
 }
+
+function hourlySales(first, second, third, fourth, fifth) {
+  var dailyTotal = 0;
+  var restaurantTotal = document.getElementById("totalOfTable");
+  var td = document.createElement("td");
+  td.textContent = "Overall Hourly Totals";
+  restaurantTotal.appendChild(td);
+  for(var k = 0; k < hours.length; k++) {
+    var total = first.hourlyArray[k] + second.hourlyArray[k] + third.hourlyArray[k] + fourth.hourlyArray[k] + fifth.hourlyArray[k];
+    td = document.createElement("td");
+    td.textContent = total;
+    restaurantTotal.appendChild(td);
+    dailyTotal = dailyTotal + total;
+  }
+  td = document.createElement("td");
+  td.textContent = dailyTotal;
+  restaurantTotal.appendChild(td);
+}
+
 salesTable();
-console.log(hours);
 
 var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3, "pikeTable");
 firstAndPike.render();
@@ -57,6 +79,8 @@ var capitolHill = new Restaurant("Capitol Hill", 20, 38, 2.3, "capitolTable");
 capitolHill.render();
 var alki = new Restaurant ("Alki", 2, 16, 4.6, "alkiTable");
 alki.render();
+
+hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki)
 
 /*
 function generate() {
