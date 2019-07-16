@@ -1,5 +1,22 @@
 "use strict";
 
+function Restaurant(minCust,maxCust,avgCookies,hourlyArray){
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookies = avgCookies;
+  this.hourlyArray = hourlyArray;
+  this.randCust = function() {
+    var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return numCust;
+  };
+  this.randCookies = function() {
+    var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
+    return numCust;
+  }
+}
+
+var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3, [])
+
 var firstAndPike = {
     minCust: 23,
     maxCust: 65,
