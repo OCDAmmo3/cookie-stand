@@ -1,5 +1,4 @@
 /*
-
 FONTS FOR USE
 
 font-family: 'Finger Paint', cursive;
@@ -12,11 +11,24 @@ font-family: 'Acme', sans-serif;
 }
 
 .forms {
+  font-family: "Acme", sans-serif;
   position:absolute;
   margin:3%;
+  width:30%;
+  min-width:300px;
+}
+
+.forms p {
+  margin-bottom:10px;
+}
+
+label {
+  display:inline-block;
 }
 
 input {
+  margin-left:20px;
+  padding:3px 0px 3px 8px;
   background-color:white;
   border:inset;
   border-radius:20px;
