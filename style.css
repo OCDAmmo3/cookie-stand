@@ -27,8 +27,9 @@ table {
   width:97%;
   padding:10px;
   background-color:grey;
-  color:#414d1c;
+  color:white;
   margin:10px;
+  border:white solid 2px;
 }
 
 td {

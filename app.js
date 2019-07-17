@@ -13,6 +13,9 @@ function salesTable() {
     td.textContent = hours[i];
     thead.appendChild(td);
   }
+  td = document.createElement("td");
+  td.textContent = "Total";
+  thead.appendChild(td);
 }
 
 function Restaurant(name,minCust,maxCust,avgCookies,id){
@@ -24,22 +27,26 @@ function Restaurant(name,minCust,maxCust,avgCookies,id){
   this.id = id;
   this.dailyTotal = 0;
 }
+
 //Constructor function set up
 Restaurant.prototype.randCust = function() {
   var numCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust;
   return numCust;
 };
+
 Restaurant.prototype.randCookies = function() {
   for(var i=0; i<hours.length; i++) {
     this.hourlyArray[i] = Math.floor(this.randCust()*this.avgCookies*scaling[i]);
   }
 };
+
 Restaurant.prototype.totalSales = function() {
   for(var i = 0; i < hours.length; i++) {
     this.dailyTotal += this.hourlyArray[i];
   }
 };
-Restaurant.prototype.render = function() {
+
+Restaurant.prototype.render = function(restaurant) {
   this.randCookies();
   var restaurantTable = document.getElementById(this.id);
   var td = document.createElement("td");
@@ -50,11 +57,13 @@ Restaurant.prototype.render = function() {
     td = document.createElement("td");
     td.textContent = this.hourlyArray[j];
     restaurantTable.appendChild(td);
-    totalSales = totalSales + this.hourlyArray[j];
   }
-  td = document.createElement("td");
-  td.textContent = totalSales;
+  restaurant.totalSales();
+  var totalSales = document.createElement("td");
+  totalSales.textContent = restaurant.dailyTotal;
+  restaurantTable.appendChild(totalSales);
 };
+
 function hourlySales(first, second, third, fourth, fifth) {
   var dailyTotal = 0;
   var restaurantTotal = document.getElementById("totalOfTable");
@@ -76,18 +85,15 @@ function hourlySales(first, second, third, fourth, fifth) {
 salesTable();
 
 var firstAndPike = new Restaurant("First And Pike", 23, 65, 6.3, "pikeTable");
-firstAndPike.render();
-firstAndPike.totalSales();
+firstAndPike.render(firstAndPike);
 var seaTacAirport = new Restaurant("SeaTac Airport", 3, 24, 1.2, "seaTacTable");
-seaTacAirport.totalSales();
-seaTacAirport.render();
+seaTacAirport.render(seaTacAirport);
 var seattleCenter = new Restaurant("Seattle Center", 11, 38, 3.7, "seattleTable");
-seattleCenter.totalSales();
-seattleCenter.render();
+seattleCenter.render(seattleCenter);
 var capitolHill = new Restaurant("Capitol Hill", 20, 38, 2.3, "capitolTable");
-capitolHill.render();
+capitolHill.render(capitolHill);
 var alki = new Restaurant ("Alki", 2, 16, 4.6, "alkiTable");
-alki.render();
+alki.render(alki);
 
 hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki);
 
