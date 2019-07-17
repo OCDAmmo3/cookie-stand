@@ -1,0 +1,34 @@
+* {
+  font-family:"Helvetica", sans-serif;
+  background-color:lightGrey;
+}
+
+h1 {
+  text-align:center;
+}
+
+table {
+  width:100%;
+  padding:-2px;
+  background-color:grey;
+  color:white;
+  border:white solid 3px;
+}
+
+td {
+  background-color:grey;
+  border-top:white solid 1px;
+  border-right:white solid 1px;
+  padding:3px;
+  text-align:center;
+}
+
+tr {
+
+}
+
+img {
+  width: 30%;
+  float: left;
+  margin-left: 35%;
+}
