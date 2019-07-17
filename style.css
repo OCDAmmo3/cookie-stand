@@ -1,34 +1,56 @@
+/*
+
+FONTS FOR USE
+
+font-family: 'Finger Paint', cursive;
+font-family: 'Acme', sans-serif;
+*/
+
 * {
-  font-family:"Helvetica", sans-serif;
-  background-color:lightGrey;
+  font-family: 'Acme', sans-serif;
+  background-color:#ba927e;
+  margin:0px;
 }
 
 h1 {
   text-align:center;
+  font-family: 'Finger Paint', cursive;
+  font-size:80px;
+  color:rgba(137, 138, 106, 0.6);
+  margin-top:0px;
+  background-color:grey;
+  width:100%;
 }
 
 table {
-  width:100%;
-  padding:-2px;
+  width:97%;
+  padding:10px;
   background-color:grey;
-  color:white;
-  border:white solid 3px;
+  color:#414d1c;
+  margin:10px;
 }
 
 td {
-  background-color:grey;
-  border-top:white solid 1px;
-  border-right:white solid 1px;
   padding:3px;
+  padding-top:8px;
+  padding-bottom:8px;
   text-align:center;
+  background-color:olive;
+  font-size:20px;
 }
 
+td:first-child {
+    background-color:#34321c;
+    padding:7px;
+    color:white;
+}
 tr {
-
+  background-color:white;
 }
 
 img {
   width: 30%;
-  float: left;
+  position:relative;
   margin-left: 35%;
+  z-index:0;
 }
