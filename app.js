@@ -1,7 +1,7 @@
 "use strict";
 
 var hours = ["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm"]
-
+var scaling = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6]
 
 function salesTable() {
   var thead = document.getElementById("thead");
@@ -29,7 +29,7 @@ Restaurant.prototype.randCust = function() {
 };
 Restaurant.prototype.randCookies = function() {
   for(var i=0; i<hours.length; i++){
-    this.hourlyArray[i] = Math.floor(this.randCust()*this.avgCookies);
+    this.hourlyArray[i] = Math.floor(this.randCust()*this.avgCookies*scaling[i]);
   }
 };
 Restaurant.prototype.render = function() {
@@ -56,7 +56,7 @@ function hourlySales(first, second, third, fourth, fifth) {
   td.textContent = "Overall Hourly Totals";
   restaurantTotal.appendChild(td);
   for(var k = 0; k < hours.length; k++) {
-    var total = first.hourlyArray[k] + second.hourlyArray[k] + third.hourlyArray[k] + fourth.hourlyArray[k] + fifth.hourlyArray[k];
+    var total = firstAndPike.hourlyArray[k] + seaTacAirport.hourlyArray[k] + seattleCenter.hourlyArray[k] + capitolHill.hourlyArray[k] + alki.hourlyArray[k];
     td = document.createElement("td");
     td.textContent = total;
     restaurantTotal.appendChild(td);
@@ -80,7 +80,7 @@ capitolHill.render();
 var alki = new Restaurant ("Alki", 2, 16, 4.6, "alkiTable");
 alki.render();
 
-hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki)
+hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki);
 
 /*
 function generate() {
