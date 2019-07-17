@@ -16,10 +16,11 @@ h1 {
   text-align:center;
   font-family: 'Finger Paint', cursive;
   font-size:80px;
-  color:rgba(137, 138, 106, 0.6);
+  color:rgba(186, 146, 126, .6);
   margin-top:0px;
   background-color:grey;
   width:100%;
+  border-bottom:rgb(70,70,70) solid 1px;
 }
 
 table {
