@@ -12,8 +12,10 @@ font-family: 'Acme', sans-serif;
 
 .restForms {
   font-family: "Acme", sans-serif;
-  margin:10px 0px 0px 12px;
-  position:absolute;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:30%;
 }
 
 input {
@@ -22,8 +24,8 @@ input {
   background-color:white;
   border:solid black 1px;
   border-radius:20px;
-  width:100%;
-  display:inline-block;
+  width:50%;
+  float:right;
 }
 
 input:hover {
@@ -32,11 +34,13 @@ input:hover {
 
 input#submit {
   font-family: "Acme", sans-serif;
-  border-radius:0px;
+  border-radius:20px;
   background-color:white;
   width:30%;
-  margin-top:10px;
+  margin:0px auto !important;
   border:solid black 1px;
+  display:block;
+  float:none;
 }
 
 input#submit:hover {
@@ -45,8 +49,8 @@ input#submit:hover {
 
 label {
   min-width:110px;
-  display:inline-block;
-  margin-bottom:8px;
+  display:block;
+  margin-bottom:18px;
   width:400px;
 }
 
@@ -94,4 +98,19 @@ img {
   position:relative;
   margin-left: 35%;
   z-index:0;
+}
+
+li {
+  margin:10px 0px 0px 10px;
+}
+
+a {
+  text-decoration:none;
+  color:black;
+  font-size:30px;
+  font-family: "Acme", sans-serif;
+}
+
+a:hover {
+  color:gold;
 }
