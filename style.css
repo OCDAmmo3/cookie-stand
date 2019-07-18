@@ -10,28 +10,48 @@ font-family: 'Acme', sans-serif;
   margin:0px;
 }
 
-.forms {
+.restForms {
   font-family: "Acme", sans-serif;
+  margin:10px 0px 0px 12px;
   position:absolute;
-  margin:3%;
-  width:30%;
-  min-width:300px;
-}
-
-.forms p {
-  margin-bottom:10px;
-}
-
-label {
-  display:inline-block;
 }
 
 input {
   margin-left:20px;
   padding:3px 0px 3px 8px;
   background-color:white;
-  border:inset;
+  border:solid black 1px;
   border-radius:20px;
+  width:100%;
+  display:inline-block;
+}
+
+input:hover {
+  background-color:rgb(230,230,230);
+}
+
+input#submit {
+  font-family: "Acme", sans-serif;
+  border-radius:0px;
+  background-color:white;
+  width:30%;
+  margin-top:10px;
+  border:solid black 1px;
+}
+
+input#submit:hover {
+  background-color:rgb(230,230,230);
+}
+
+label {
+  min-width:110px;
+  display:inline-block;
+  margin-bottom:8px;
+  width:400px;
+}
+
+.buttons {
+  style:none;
 }
 
 h1 {
@@ -46,7 +66,7 @@ h1 {
 }
 
 table {
-  width:97%;
+  width:98%;
   padding:10px;
   background-color:grey;
   color:white;

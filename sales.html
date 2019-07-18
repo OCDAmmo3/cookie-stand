@@ -8,42 +8,71 @@
   </head>
   <body>
     <h1>Salmon Cookies</h1>
-      <section class="forms">
-        <form>
-          <p>Restaurant Name:<input type="text" name="username" /></p>
-          <p>Max Customers:<input type="num" name="maxCust" /></p>
-        </form>
-      </section>
-      <img src="https://cdn2.webdamdb.com/1280_2Lii4dyxIEp9.png?1523982339" alt="Salmon Drawing"/>
-      <section>
-        <table>
-          <thead>
-            <tr id="thead">
+    <section id="formSection"></section>
+      <form>
+        <fieldset class="restForms">
+          <div class="forms">
+            <label for="name">
+             Restaurant Name
+              <input type="text" id="name" placeholder="Restaurant"/>
+            </label>
+          </div>
+          <div class="forms">  
+            <label for="maxCust">
+              Maximum Customers
+              <input type="number" id="maxCust" placeholder="0"/>
+            </label>
+          </div>
+          <div class="forms">  
+            <label for="minCust">
+              Minimum Customers
+              <input type="number" id="minCust" placeholder="0"/>
+            </label>
+          </div>
+          <div class="forms">  
+            <label for="avgCookies">
+              Avg Cookies Per Customer
+              <input type="number" id="avgCookies" placeholder="0"/>
+            </label>
+          </div>
+          <div class="buttons">
+            <label for="submit">
+              <input type="button" name="submit" value="Submit" id="submit"/>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+    <img src="https://cdn2.webdamdb.com/1280_2Lii4dyxIEp9.png?1523982339" alt="Salmon Drawing"/>
+    <section>
+      <table>
+        <thead>
+          <tr id="thead">
 
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="pikeTable">
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="pikeTable">
 
-            </tr>
-            <tr id="seaTacTable">
+          </tr>
+          <tr id="seaTacTable">
 
-            </tr>
-            <tr id="seattleTable">
+          </tr>
+          <tr id="seattleTable">
 
-            </tr>
-            <tr id="capitolTable">
+          </tr>
+          <tr id="capitolTable">
 
-            </tr>
-            <tr id="alkiTable">
+          </tr>
+          <tr id="alkiTable">
 
-            </tr>
-            <tr id="totalOfTable">
+          </tr>
+          <tr id="totalOfTable">
 
-            </tr>
-          </tbody>
-        </table>
-      </section>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <script src="app.js"></script>
   </body>
 </html>
