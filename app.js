@@ -99,6 +99,19 @@ alki.render(alki);
 
 hourlySales(firstAndPike, seaTacAirport, seattleCenter, capitolTable, alki);
 
+function newRestaurant(event) {
+  event.preventDefault();
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgCookies = event.target.avgCookies.value;
+  var restName = event.target.restName.value;
+
+  var newRestaurant = new Restaurant(minCust, maxCust, avgCookies, restName);
+  console.log(newRestaurant);
+  Restaurant.render();
+}
+var form = document.querySelector("form");
+form.addEventListener("submit", newRestaurant);
 /*
 function generate() {
   firstAndPike.randCookies();
