@@ -10,6 +10,21 @@ font-family: 'Acme', sans-serif;
   margin:0px;
 }
 
+a {
+  text-decoration:none;
+  color:black;
+  font-family: "Acme", sans-serif;
+  padding: 16px;
+  margin-left:10px;
+  position:absolute;
+  margin-top:10px;
+  font-size:24px;
+}
+
+a:hover {
+  color:gold;
+}
+
 .restForms {
   font-family: "Acme", sans-serif;
   margin:10px 0px 0px 12px;
