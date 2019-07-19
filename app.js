@@ -34,14 +34,15 @@ function Restaurant(name,minCust,maxCust,avgCookies){
 
 function salesTable() {
   var thead = document.getElementById("thead");
-  var td = document.createElement("td");
+  var td = document.createElement("th");
+  td.textContent = "Locations";
   thead.appendChild(td);
   for(var i = 0; i < hours.length; i++) {
-    td = document.createElement("td");
+    td = document.createElement("th");
     td.textContent = hours[i];
     thead.appendChild(td);
   }
-  td = document.createElement("td");
+  td = document.createElement("th");
   td.textContent = "Total";
   thead.appendChild(td);
 }

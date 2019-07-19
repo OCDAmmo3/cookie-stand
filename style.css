@@ -84,6 +84,21 @@ table {
   font-family: 'Acme', sans-serif;
 }
 
+th {
+  padding:3px;
+  padding-top:8px;
+  padding-bottom:8px;
+  text-align:center;
+  background-color:olive;
+  font-size:24px;
+}
+
+th:first-child {
+  background-color:#34321c;
+  padding:7px;
+  color:white;
+}
+
 td {
   padding:3px;
   padding-top:8px;
