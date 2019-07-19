@@ -7,70 +7,60 @@
     <link href="https://fonts.googleapis.com/css?family=Acme|Finger+Paint&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Salmon Cookies</h1>
-    <section id="formSection"></section>
+    <h1>Cookie Sales</h1>
+    <section id="navBar">
+    <a href="index.html"><img src="images/salmon.png" alt="Salmon Drawing"/></a>
+    <nav>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li>
+            <a href="merch.html">Merchandise</a>
+          </li>
+          <li>
+            <a href="sales.html">Sales Page</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="formSection">
       <form>
         <fieldset class="restForms">
           <div class="forms">
-            <label for="restName">
-             Restaurant Name
-              <input type="text" id="restName" placeholder="Restaurant"/>
+
+            <label>
+              Restaurant Name
+              <input type="text" id="name" placeholder="Restaurant"/>
+
             </label>
           </div>
           <div class="forms">  
-            <label for="maxCust">
+            <label>
               Maximum Customers
               <input type="number" id="maxCust" placeholder="0"/>
             </label>
           </div>
           <div class="forms">  
-            <label for="minCust">
+            <label>
               Minimum Customers
               <input type="number" id="minCust" placeholder="0"/>
             </label>
           </div>
           <div class="forms">  
-            <label for="avgCookies">
+            <label>
               Avg Cookies Per Customer
               <input type="number" id="avgCookies" placeholder="0"/>
             </label>
           </div>
-          <div class="buttons">
-            <label for="submit">
-              <input type="submit" name="submit" value="Submit" id="submit"/>
-            </label>
-          </div>
-        </fieldset>
-      </form>
-    </section>
-    <img src="https://cdn2.webdamdb.com/1280_2Lii4dyxIEp9.png?1523982339" alt="Salmon Drawing"/>
+
+        <input type="submit" name="submit" value="Submit" id="submit"/>
+      </fieldset>
+    </form>
+  </section>
     <section>
       <table>
-        <thead>
-          <tr id="thead">
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="pikeTable">
-
-          </tr>
-          <tr id="seaTacTable">
-
-          </tr>
-          <tr id="seattleTable">
-
-          </tr>
-          <tr id="capitolTable">
-
-          </tr>
-          <tr id="alkiTable">
-
-          </tr>
-          <tr id="totalOfTable">
-
-          </tr>
-        </tbody>
+        <thead id="thead"></thead>
+        <tbody id="tbody"></tbody>
+        <tfoot id="tfooter"></tfoot>
       </table>
     </section>
     <script src="app.js"></script>

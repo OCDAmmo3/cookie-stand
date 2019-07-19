@@ -10,25 +10,19 @@ font-family: 'Acme', sans-serif;
   margin:0px;
 }
 
-a {
-  text-decoration:none;
-  color:black;
-  font-family: "Acme", sans-serif;
-  padding: 16px;
-  margin-left:10px;
-  position:absolute;
-  margin-top:10px;
-  font-size:24px;
-}
-
-a:hover {
-  color:gold;
+#navBar {
+  margin-bottom:20px;
 }
 
 .restForms {
   font-family: "Acme", sans-serif;
-  margin:10px 0px 0px 12px;
-  position:absolute;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:50%;
+  padding:15px;
+  border:solid rgb(100,100,100) 1px;
+  background-color:lightGrey;
 }
 
 input {
@@ -37,8 +31,8 @@ input {
   background-color:white;
   border:solid black 1px;
   border-radius:20px;
-  width:100%;
-  display:inline-block;
+  width:60%;
+  float:right;
 }
 
 input:hover {
@@ -47,11 +41,13 @@ input:hover {
 
 input#submit {
   font-family: "Acme", sans-serif;
-  border-radius:0px;
+  border-radius:20px;
   background-color:white;
   width:30%;
-  margin-top:10px;
+  margin:0px auto !important;
   border:solid black 1px;
+  display:block;
+  float:none;
 }
 
 input#submit:hover {
@@ -60,9 +56,11 @@ input#submit:hover {
 
 label {
   min-width:110px;
-  display:inline-block;
-  margin-bottom:8px;
-  width:400px;
+  display:block;
+  margin-bottom:18px;
+  padding-top:10px;
+  width:100%;
+  background-color:lightGrey;
 }
 
 h1 {
@@ -109,4 +107,37 @@ img {
   position:relative;
   margin-left: 35%;
   z-index:0;
+}
+
+nav {
+  margin-left:35%;
+}
+
+ul {
+  margin-top:15px;
+  display:inline-block;
+  border-style:border-box;
+}
+
+li {
+  margin-top:10px;
+  display:inline-block;
+  border-right:solid black 1px;
+}
+
+li:first-child {
+  border-left:solid black 1px;
+}
+
+a {
+  text-decoration:none;
+  padding:10px 15px 10px 15px;
+  color:black;
+  font-size:30px;
+  font-family: "Acme", sans-serif;
+}
+
+nav a:hover {
+  color:gold;
+  background-color:#bf8569;
 }
