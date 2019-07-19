@@ -10,6 +10,10 @@ font-family: 'Acme', sans-serif;
   margin:0px;
 }
 
+#navBar {
+  margin-bottom:20px;
+}
+
 .restForms {
   font-family: "Acme", sans-serif;
   display:block;
@@ -103,4 +107,37 @@ img {
   position:relative;
   margin-left: 35%;
   z-index:0;
+}
+
+nav {
+  margin-left:35%;
+}
+
+ul {
+  margin-top:15px;
+  display:inline-block;
+  border-style:border-box;
+}
+
+li {
+  margin-top:10px;
+  display:inline-block;
+  border-right:solid black 1px;
+}
+
+li:first-child {
+  border-left:solid black 1px;
+}
+
+a {
+  text-decoration:none;
+  padding:10px 15px 10px 15px;
+  color:black;
+  font-size:30px;
+  font-family: "Acme", sans-serif;
+}
+
+nav a:hover {
+  color:gold;
+  background-color:#bf8569;
 }
