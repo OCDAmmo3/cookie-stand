@@ -6,7 +6,7 @@ font-family: 'Acme', sans-serif;
 */
 
 * {
-  background-color:#ba927e;
+  background-color:#a74826;
   margin:0px;
 }
 
@@ -21,7 +21,7 @@ font-family: 'Acme', sans-serif;
   margin-right:auto;
   width:50%;
   padding:15px;
-  border:solid rgb(100,100,100) 1px;
+  border:solid rgb(50,50,50) 2px;
   background-color:lightGrey;
 }
 
@@ -67,7 +67,7 @@ h1 {
   text-align:center;
   font-family: 'Finger Paint', cursive;
   font-size:80px;
-  color:rgba(186, 146, 126, .6);
+  color:rgba(167, 72, 38, .6);
   margin-top:0px;
   background-color:grey;
   width:100%;
@@ -139,5 +139,5 @@ a {
 
 nav a:hover {
   color:gold;
-  background-color:#bf8569;
+  background-color:#ba6749;
 }
