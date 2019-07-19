@@ -104,18 +104,3 @@ img {
   margin-left: 35%;
   z-index:0;
 }
-
-li {
-  margin:10px 0px 0px 10px;
-}
-
-a {
-  text-decoration:none;
-  color:black;
-  font-size:30px;
-  font-family: "Acme", sans-serif;
-}
-
-a:hover {
-  color:gold;
-}
