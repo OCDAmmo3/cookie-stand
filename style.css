@@ -6,7 +6,7 @@ font-family: 'Acme', sans-serif;
 */
 
 * {
-  background-color:#a74826;
+  background-color:#d8a968;
   margin:0px;
 }
 
@@ -67,9 +67,9 @@ h1 {
   text-align:center;
   font-family: 'Finger Paint', cursive;
   font-size:80px;
-  color:rgba(167, 72, 38, .6);
+  color:rgba(152, 118, 69, .6);
   margin-top:0px;
-  background-color:grey;
+  background-color:rgb(180,180,180);
   width:100%;
   border-bottom:rgb(70,70,70) solid 1px;
 }
@@ -90,12 +90,14 @@ th {
   padding-top:8px;
   padding-bottom:8px;
   text-align:center;
-  background-color:olive;
+  background-color:#a74826;
+  border-bottom:solid grey 1px;
   font-size:24px;
 }
 
 th:first-child {
   background-color:#34321c;
+  border-right:solid grey 1px;
   padding:7px;
   color:white;
 }
@@ -105,7 +107,7 @@ td {
   padding-top:8px;
   padding-bottom:8px;
   text-align:center;
-  background-color:olive;
+  background-color:#a74826;
   font-size:20px;
 }
 
@@ -113,6 +115,7 @@ td:first-child {
     background-color:#34321c;
     padding:7px;
     color:white;
+    border-right:solid grey 1px;
 }
 tr {
   background-color:white;

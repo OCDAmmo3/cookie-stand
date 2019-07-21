@@ -1,5 +1,5 @@
 * {
-    background-color:#a74826;
+    background-color:#d8a968;
     margin:0px;
 }
   
@@ -7,9 +7,9 @@ h1 {
     text-align:center;
     font-family: 'Finger Paint', cursive;
     font-size:80px;
-    color:rgba(167, 72, 38, .6);
+    color:rgba(152, 118, 69, .6);
     margin-top:0px;
-    background-color:grey;
+    background-color:rgb(180,180,180);
     width:100%;
     border-bottom:rgb(70,70,70) solid 1px;
   }
@@ -19,23 +19,23 @@ nav {
     margin-bottom:20px;
 }
 
-ul {
+nav ul {
     margin-top:15px;
     display:inline-block;
     border-style:border-box;
 }
 
-li {
+nav li {
     margin-top:10px;
     display:inline-block;
     border-right:solid black 1px;
 }
   
-li:first-child {
+nav li:first-child {
     border-left:solid black 1px;
 }
 
-a {
+nav a {
     text-decoration:none;
     padding:10px 15px 10px 15px;
     color:black;
@@ -48,7 +48,7 @@ nav a:hover {
     background-color:#ba6749;
 }
 
-img {
+#salmonPic {
   width: 30%;
   position:relative;
   margin-left: 35%;
@@ -61,6 +61,7 @@ h4 {
     font-family: "Acme", sans-serif;
     margin:30px 0px 20px 0px;
     text-align:center;
+    color:white;
 }
 
 p {
@@ -70,4 +71,36 @@ p {
     margin:20px 15% 20px 15%;
     line-height:1.4;
     color:rgb(55,55,55);
+}
+
+#cookiePic {
+    width:20%;
+    margin-left:40%;
+    margin-bottom:30px;
+    border:solid black 2px;
+}
+
+.shrink {
+    display:inline-block;
+    width:20%;
+    margin-left:40%;
+    border:solid black 2px;
+}
+
+.price {
+    color:skyBlue;
+}
+
+#merchItems {
+    font-family: "Acme", sans-serif;
+}
+
+#merchItems h3 {
+    margin-top:30px;
+    text-align:center;
+}
+
+#merchItems li {
+    margin-bottom:20px;
+    text-align:center;
 }
