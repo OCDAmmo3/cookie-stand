@@ -121,6 +121,8 @@ var seattleCenter = new Restaurant("Seattle Center", 11, 38, 3.7);
 var capitolHill = new Restaurant("Capitol Hill", 20, 38, 2.3);
 var alki = new Restaurant ("Alki", 2, 16, 4.6);
 
+// Executions ==================================================================================
+
 firstAndPike.randCookies();
 seaTacAirport.randCookies();
 seattleCenter.randCookies();
